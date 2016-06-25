@@ -1,0 +1,32 @@
+# == Schema Information
+#
+# Table name: cities
+#
+#  id                   :integer          not null, primary key
+#  location             :string
+#  rain_image_url       :string
+#  sun_image_url        :string
+#  webcam_url           :string
+#  created_at           :datetime         not null
+#  updated_at           :datetime         not null
+#  open_weather_city_id :string
+#  temperature          :string
+#  description          :string
+#  weather_status       :string
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  location: MyString
+  weather_url: MyString
+  rain_image_url: MyString
+  sun_image_url: MyString
+  webcam_url: MyString
+
+two:
+  location: MyString
+  weather_url: MyString
+  rain_image_url: MyString
+  sun_image_url: MyString
+  webcam_url: MyString
