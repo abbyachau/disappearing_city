@@ -1,2 +1,9 @@
 <h1>Cities#index</h1>
 <p>Find me in app/views/cities/index.html.erb</p>
+
+
+
+<% for city in @cities do %>
+  <h2><%=link_to(h(city.rain_image_url), city_path(city))  %></h2>
+  <p><%= city.rain_image_url %></p>
+<% end %>
