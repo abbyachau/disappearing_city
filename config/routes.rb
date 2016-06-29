@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get 'test', to: 'static_pages#test', as: 'test'
   get '/cities/:id', to: 'cities#show'
-  get 'sign_in', to: "static_pages#sign_in", as: 'sign_in'
+  get 'about', to: "static_pages#about", as: 'about'
 
   root 'static_pages#home'
   resources :cities

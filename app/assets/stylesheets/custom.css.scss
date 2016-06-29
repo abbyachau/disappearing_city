@@ -28,9 +28,38 @@ html,
 body {
   height: 100%;
   background-color: #222;
-}
-body {
   color: #fff;
   text-align: left;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+h1 {
+    font-size: 50px;
+}
+
+
+.home_image {
+  background-image: url("home_image");
+}
+
+.shoreditch {
+  background-image: url("shoreditch");
+  padding-top: 25px;
+  font-color: #333;
+  }
+
+#about {
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.nav {
+  font-size: 25px;
+  padding-top: 25px;
+  padding-left: 25px;
+  color: #282;
+  text-align: right;
+}
+
+.puppy_gif{
+  padding-top: 50px;
 }
