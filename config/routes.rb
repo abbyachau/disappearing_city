@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
-  resources :cities
+
+
+  get '/auth/:provider/callback', to: 'sessions#create'
+  delete '/signout', to: 'sessions#destroy'
+
   get 'test', to: 'static_pages#test', as: 'test'
   get '/cities/:id', to: 'cities#show'
+  get 'sign_in', to: "static_pages#sign_in", as: 'sign_in'
+
   root 'static_pages#home'
+  resources :cities
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

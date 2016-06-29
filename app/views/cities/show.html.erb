@@ -1,7 +1,24 @@
-<h1>Cities#show</h1>
-<p>Find me in app/views/cities/show.html.erb</p>
-<p>how do you display</p>
+<h1>Disappearing City</h1>
+<p><%=@city.location %></p>
 
-<div class="col-md-6">
-  <%=image_tag(@city.rain_image_url, class: "img-responsive thumbnail") %>
-</div>
+
+
+
+<p>
+  <%= image_tag(@city.weather_status.downcase == "mist" || @city.weather_status.downcase == "rain" ? @city.rain_image_url : @city.sun_image_url,
+  class: "img-responsive thumbnail") %>
+
+</p>
+
+<% if @city.weather_status.downcase == "mist" %>
+  <%= image_tag(@city.rain_image_url) %>
+<% end -%>
+
+<% if @city.weather_status.downcase == "rain" %>
+  <%= image_tag(@city.rain_image_url) %>
+<% end -%>
+
+
+<% if @city.weather_status.downcase == "sunny" %>
+  <%= @city.sun_image_url %>
+<% end -%>

@@ -1,1 +1,36 @@
 @import 'bootstrap';
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+//Fonts
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+@import url(https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic);
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+.pacifico_font {
+  font-family: 'Pacifico', cursive;
+}
+.montserrat_font {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.lora_font {
+  font-family: 'Lora', serif;
+}
+
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+  height: 100%;
+  background-color: #222;
+}
+body {
+  color: #fff;
+  text-align: left;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}

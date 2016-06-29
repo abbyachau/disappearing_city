@@ -1,23 +1,16 @@
-# == Schema Information
-#
-# Table name: cities
-#
-#  id                   :integer          not null, primary key
-#  location             :string
-#  rain_image_url       :string
-#  sun_image_url        :string
-#  webcam_url           :string
-#  created_at           :datetime         not null
-#  updated_at           :datetime         not null
-#  open_weather_city_id :string
-#  temperature          :string
-#  description          :string
-#  weather_status       :string
-#
+require 'open_weather'
 
 class City < ActiveRecord::Base
-  def check_weather
-    options = { APPID: ENV['open_weather_api_key'] }
-    city_weather = OpenWeather::Current.city_id(city.open_weather_city_id, options)
+
+  def update_forecast!
+    forecast = OpenWeather::Current.city_id( self.open_weather_city_id, { APPID: Figaro.env.open_weather_app_id })
+    status = forecast["weather"].first["main"].downcase
+    desc = forecast["weather"].first["description"].downcase
+    self.update(weather_status: status, description: desc)
   end
+
+  def self.update_all_forecasts
+    City.all.each { |city| city.update_forecast! }
+  end
+
 end

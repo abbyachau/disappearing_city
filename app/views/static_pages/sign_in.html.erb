@@ -1,0 +1,26 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <%=link_to 'Disappearing Cities', root_path, class: 'navbar-brand'%>
+    </div>
+    <div id="navbar">
+      <% if current_user %>
+      <ul class="nav navbar-nav pull-right">
+        <li> <%=image_tag current_user.image_url, alt: current_user.name %>  </li>
+        <li> <%=link_to 'Sign Out', signout_path, method: :delete  %> </li>
+      </ul>
+      <% else %>
+        <ul class="nav navbar-nav">
+          <li> <%= link_to 'Twitter', '/auth/twitter', class: 'btn btn-xs' %> </li>
+        </ul>
+        <% end %>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <% flash.each do |k,v| %>
+   <div class="alert alert-<%= k %>">
+     <%= v %>
+  <% end %>
+</div>
