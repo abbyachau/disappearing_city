@@ -40,10 +40,11 @@
   class: "img-responsive thumbnail") %>
 </p>
 
-
+<div class="london_webcam">
 <% if @city.open_weather_city_id == "2643743" %>
   <iframe width="480" height="270" src="http://www.ustream.tv/embed/1041782?html5ui" scrolling="no" allowfullscreen webkitallowfullscreen frameborder="0" style="border: 0 none transparent;"></iframe><a href="http://www.ustream.tv/" title="Live stream software by Ustream" style="padding: 2px 0px 4px; width: 400px; background: #ffffff; display: block; color: #000000; font-weight: normal; font-size: 10px; text-decoration: underline; text-align: left;" target="_blank">Live Stream Software</a>
 <% end -%>
+</div>
 
 <% if @city.open_weather_city_id == "1818209" %>
   <a name="lkr-timelapse-player" data-id="1179240123" data-play="day" href="https://www.lookr.com/lookout/1179240123-Hong-Kong#action-play-day" target="_blank">Hong Kong: Downtown live webcam in China &mdash; Play 24 hours</a><script async type="text/javascript" src="https://api.lookr.com/embed/script/timelapse.js"></script>
